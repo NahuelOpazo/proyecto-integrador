@@ -25,6 +25,6 @@ app.get("/api/health", async (req, res) => {
 // 🔹 Middleware de errores
 app.use(errorHandler);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5173;
 app.listen(PORT, () => console.log(`✅ Backend corriendo en http://localhost:${PORT}`));
 

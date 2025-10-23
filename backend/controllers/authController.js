@@ -49,3 +49,13 @@ export const AuthController = {
     }
   },
 };
+
+export const registerUser = (req, res) => {
+  console.log("📩 Datos recibidos en register:", req.body);
+  res.status(201).json({ message: "Usuario registrado correctamente (dummy)" });
+};
+
+export const loginUser = (req, res) => {
+  console.log("🔑 Datos recibidos en login:", req.body);
+  res.status(200).json({ token: "token-falso-de-prueba" });
+};

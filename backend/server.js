@@ -5,6 +5,8 @@ import { pool } from "./config/db.js";
 import authRoutes from "./routes/auth.js";
 import productsRoutes from "./routes/products.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
+import cartRoutes from "./routes/cart.js";
+import orderRoutes from "./routes/orders.js";
 
 dotenv.config();
 
@@ -24,6 +26,9 @@ app.get("/api/health", async (req, res) => {
 
 // 🔹 Middleware de errores
 app.use(errorHandler);
+
+app.use("/api/cart", cartRoutes);
+app.use("/api/orders", orderRoutes);
 
 const PORT = process.env.PORT || 5173;
 app.listen(PORT, () => console.log(`✅ Backend corriendo en http://localhost:${PORT}`));
